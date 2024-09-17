@@ -1,3 +1,26 @@
+html, body {
+    height: 100%; /* ページ全体の高さを100%に設定 */
+    margin: 0; /* 余白をなくす */
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+main {
+    flex-grow: 1; /* 残りのスペースを埋める */
+    background-color: #f5f5f5; /* 背景を薄いグレーに設定 */
+    padding-bottom: 60px; /* フッターの高さ分だけ下に余白を作る */
+    display: flex;
+    justify-content: center; /* 水平方向に中央揃え */
+    align-items: center;     /* 垂直方向に中央揃え */
+    box-sizing: border-box; /* パディングを含むレイアウト */
+}
+
 .form-control {
     width: 100%;
     padding: 10px;
@@ -18,6 +41,7 @@
 }
 
 .register-container {
+    background-color: #f5f5f5;
     padding: 40px;
     text-align: center;
     margin: auto;

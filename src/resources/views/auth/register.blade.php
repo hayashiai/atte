@@ -1,7 +1,10 @@
 @extends('layouts.app')
+@section('title', '会員登録')
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/register.css') }}">
+@endsection
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/register.css') }}">
 
 <div class="container register-container">
     <h2>会員登録</h2>
@@ -10,14 +13,23 @@
         <div class="form-group">
             <label for="name">名前</label>
             <input type="text" name="name" id="name" class="form-control" placeholder="名前" value="{{ old('name') }}" required>
+            @error('name')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
             <label for="email">メールアドレス</label>
             <input type="email" name="email" id="email" class="form-control" placeholder="メールアドレス" value="{{ old('email') }}" required>
+            @error('email')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
             <label for="password">パスワード</label>
             <input type="password" name="password" id="password" class="form-control" placeholder="パスワード" required>
+            @error('password')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
             <label for="password_confirmation">確認用パスワード</label>

@@ -1,3 +1,7 @@
+body {
+    background-color: #f5f5f5 !important; /* 薄いグレー */
+}
+
 .form-control {
     width: 100%;
     padding: 10px;

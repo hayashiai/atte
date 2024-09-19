@@ -3,20 +3,22 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB; // DBファサードをインポート
-use Illuminate\Support\Facades\Hash; // Hashファサードをインポート
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
-class Users2TableSeeder extends Seeder
-{
-    public function run()
-    {
-        DB::table('users2')->insert([
-            'name' => 'テスト太郎',
-            'email' => 'test@example.com',
-            'password' => Hash::make('password'), // ハッシュ化されたパスワード
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+class Users2TableSeeder extends Seeder {
+    public function run() {
+        for ($i = 1; $i <= 105; $i++) {
+            DB::table('users2')->insert([
+                'name' => Str::random(10),
+                'email' => Str::random(10).'@example.com',
+                'password' => bcrypt('password'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 }
+
+
 
